@@ -9,6 +9,30 @@ from pytorch_modules.modules import data_preprocess, train_engine, build_model, 
 
 import argparse
 
+#create a parser
+parser = argparse.ArgumentParser(description="Hyperparamter tuning for model training.")
+
+#get an arg for epochs
+parser.add_argument("--epochs",
+                    default=10,
+                    type=int,
+                    help="number of epochs to train the model")
+#get an arf ffor abtchsize
+parser.add_argument("--batch_size",
+                    default=32,
+                    type=int,
+                    help="batch size of the dataloader")
+#get an arg for hidden units
+parser.add_argument("--hidden_units",
+                    type=int,
+                    default=10,
+                    help="no of hidden units in the model architecture")
+#get an arg for learning rate
+parser.add_argument("--lr",
+                    default=0.001,
+                    type=float,
+                    help="set learning rate of the optimizer")
+
 
 # setup hyperparameters
 NUM_EPOCHS = 5
