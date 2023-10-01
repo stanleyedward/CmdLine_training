@@ -32,13 +32,16 @@ parser.add_argument("--lr",
                     default=0.001,
                     type=float,
                     help="set learning rate of the optimizer")
-
+#gettingargs from the parser
+args = parser.parse_args()
 
 # setup hyperparameters
-NUM_EPOCHS = 5
-BATCH_SIZE = 32
-HIDDEN_UNITS = 10
-LEARNING_RATE = 0.001
+NUM_EPOCHS = args.epochs
+BATCH_SIZE = args.batch_size
+HIDDEN_UNITS = args.hidden_units
+LEARNING_RATE = args.lr
+
+print(f"training a model with: \nepochs {NUM_EPOCHS} \nbatch_size {BATCH_SIZE} \nhidden_units {HIDDEN_UNITS}\n learning_rate {LEARNING_RATE}")
 
 # setup directories
 train_dir = "data/pizza_steak_sushi/train"
